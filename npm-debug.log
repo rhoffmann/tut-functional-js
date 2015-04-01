@@ -1,0 +1,131 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 warn package.json tut-functional-js@1.0.0 No repository field.
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/Users/richard/Code/tut-functional-js',
+6 verbose install   [ 'browserify',
+6 verbose install     'rich-lib',
+6 verbose install     'gulp',
+6 verbose install     'gulp-jshint',
+6 verbose install     'jshint-stylish',
+6 verbose install     'vinyl-source-stream' ] ]
+7 info preinstall tut-functional-js@1.0.0
+8 verbose readDependencies using package.json deps
+9 verbose already installed skipping browserify@^9.0.4 /Users/richard/Code/tut-functional-js
+10 verbose cache add [ 'rich-lib@git@github.com:rhoffmann/rich-lib.git', null ]
+11 verbose cache add name=undefined spec="rich-lib@git@github.com:rhoffmann/rich-lib.git" args=["rich-lib@git@github.com:rhoffmann/rich-lib.git",null]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: 'rich-lib@git@github.com:rhoffmann/rich-lib.git',
+12 verbose parsed url   path: 'rich-lib@git@github.com:rhoffmann/rich-lib.git',
+12 verbose parsed url   href: 'rich-lib@git@github.com:rhoffmann/rich-lib.git' }
+13 verbose already installed skipping gulp@^3.8.11 /Users/richard/Code/tut-functional-js
+14 verbose already installed skipping gulp-jshint@^1.10.0 /Users/richard/Code/tut-functional-js
+15 verbose already installed skipping jshint-stylish@^1.0.1 /Users/richard/Code/tut-functional-js
+16 verbose cache add name="rich-lib" spec="git@github.com:rhoffmann/rich-lib.git" args=["rich-lib","git@github.com:rhoffmann/rich-lib.git"]
+17 verbose parsed url { protocol: null,
+17 verbose parsed url   slashes: null,
+17 verbose parsed url   auth: null,
+17 verbose parsed url   host: null,
+17 verbose parsed url   port: null,
+17 verbose parsed url   hostname: null,
+17 verbose parsed url   hash: null,
+17 verbose parsed url   search: null,
+17 verbose parsed url   query: null,
+17 verbose parsed url   pathname: 'git@github.com:rhoffmann/rich-lib.git',
+17 verbose parsed url   path: 'git@github.com:rhoffmann/rich-lib.git',
+17 verbose parsed url   href: 'git@github.com:rhoffmann/rich-lib.git' }
+18 verbose addNamed [ 'rich-lib', 'git@github.com:rhoffmann/rich-lib.git' ]
+19 verbose addNamed [ null, null ]
+20 verbose already installed skipping vinyl-source-stream@^1.1.0 /Users/richard/Code/tut-functional-js
+21 silly lockFile 7a892fb3-ithub-com-rhoffmann-rich-lib-git rich-lib@git@github.com:rhoffmann/rich-lib.git
+22 verbose lock rich-lib@git@github.com:rhoffmann/rich-lib.git /Users/richard/.npm/7a892fb3-ithub-com-rhoffmann-rich-lib-git.lock
+23 info addNameTag [ 'rich-lib', 'git@github.com:rhoffmann/rich-lib.git' ]
+24 verbose request where is /rich-lib
+25 verbose request registry https://registry.npmjs.org/
+26 verbose request id 1592ca45d4faa061
+27 verbose url raw /rich-lib
+28 verbose url resolving [ 'https://registry.npmjs.org/', './rich-lib' ]
+29 verbose url resolved https://registry.npmjs.org/rich-lib
+30 verbose request where is https://registry.npmjs.org/rich-lib
+31 info trying registry request attempt 1 at 23:43:35
+32 http GET https://registry.npmjs.org/rich-lib
+33 http 404 https://registry.npmjs.org/rich-lib
+34 verbose headers { date: 'Wed, 01 Apr 2015 21:43:35 GMT',
+34 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+34 verbose headers   'content-type': 'application/json',
+34 verbose headers   'cache-control': 'max-age=0',
+34 verbose headers   'content-length': '51',
+34 verbose headers   'accept-ranges': 'bytes',
+34 verbose headers   via: '1.1 varnish',
+34 verbose headers   age: '0',
+34 verbose headers   'x-served-by': 'cache-fra1241-FRA',
+34 verbose headers   'x-cache': 'MISS',
+34 verbose headers   'x-cache-hits': '0',
+34 verbose headers   'x-timer': 'S1427924615.142909,VS0,VE430',
+34 verbose headers   'keep-alive': 'timeout=10, max=50',
+34 verbose headers   connection: 'Keep-Alive' }
+35 silly registry.get cb [ 404,
+35 silly registry.get   { date: 'Wed, 01 Apr 2015 21:43:35 GMT',
+35 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+35 silly registry.get     'content-type': 'application/json',
+35 silly registry.get     'cache-control': 'max-age=0',
+35 silly registry.get     'content-length': '51',
+35 silly registry.get     'accept-ranges': 'bytes',
+35 silly registry.get     via: '1.1 varnish',
+35 silly registry.get     age: '0',
+35 silly registry.get     'x-served-by': 'cache-fra1241-FRA',
+35 silly registry.get     'x-cache': 'MISS',
+35 silly registry.get     'x-cache-hits': '0',
+35 silly registry.get     'x-timer': 'S1427924615.142909,VS0,VE430',
+35 silly registry.get     'keep-alive': 'timeout=10, max=50',
+35 silly registry.get     connection: 'Keep-Alive' } ]
+36 info maybeGithub Attempting git@github.com:rhoffmann/rich-lib.git from git://github.com/git@github.com:rhoffmann/rich-lib.git
+37 silly lockFile bf396d46-ithub-com-rhoffmann-rich-lib-git git://github.com/git@github.com:rhoffmann/rich-lib.git
+38 verbose lock git://github.com/git@github.com:rhoffmann/rich-lib.git /Users/richard/.npm/bf396d46-ithub-com-rhoffmann-rich-lib-git.lock
+39 verbose addRemoteGit [ 'git://github.com/git@github.com:rhoffmann/rich-lib.git',
+39 verbose addRemoteGit   'master' ]
+40 verbose git clone git://github.com/git@github.com:rhoffmann/rich-lib.git Cloning into bare repository '/Users/richard/.npm/_git-remotes/git-github-com-git-github-com-rhoffmann-rich-lib-git-bf396d46'...
+40 verbose git clone git://github.com/git@github.com:rhoffmann/rich-lib.git fatal: remote error:
+40 verbose git clone git://github.com/git@github.com:rhoffmann/rich-lib.git   git@github.com:rhoffmann/rich-lib is not a valid repository name
+40 verbose git clone git://github.com/git@github.com:rhoffmann/rich-lib.git   Email support@github.com for help
+41 silly lockFile bf396d46-ithub-com-rhoffmann-rich-lib-git git://github.com/git@github.com:rhoffmann/rich-lib.git
+42 silly lockFile bf396d46-ithub-com-rhoffmann-rich-lib-git git://github.com/git@github.com:rhoffmann/rich-lib.git
+43 info maybeGithub Attempting git@github.com:rhoffmann/rich-lib.git from git+ssh://git@github.com:git@github.com:rhoffmann/rich-lib.git
+44 silly lockFile 68d62b0d-ithub-com-rhoffmann-rich-lib-git git@github.com:git@github.com:rhoffmann/rich-lib.git
+45 verbose lock git@github.com:git@github.com:rhoffmann/rich-lib.git /Users/richard/.npm/68d62b0d-ithub-com-rhoffmann-rich-lib-git.lock
+46 verbose addRemoteGit [ 'git@github.com:git@github.com:rhoffmann/rich-lib.git',
+46 verbose addRemoteGit   'master' ]
+47 error git clone git@github.com:git@github.com:rhoffmann/rich-lib.git Cloning into bare repository '/Users/richard/.npm/_git-remotes/git-github-com-git-github-com-rhoffmann-rich-lib-git-68d62b0d'...
+47 error git clone git@github.com:git@github.com:rhoffmann/rich-lib.git Warning: Permanently added the RSA host key for IP address '192.30.252.128' to the list of known hosts.
+47 error git clone git@github.com:git@github.com:rhoffmann/rich-lib.git fatal: remote error:
+47 error git clone git@github.com:git@github.com:rhoffmann/rich-lib.git    is not a valid repository name
+47 error git clone git@github.com:git@github.com:rhoffmann/rich-lib.git   Email support@github.com for help
+48 silly lockFile 68d62b0d-ithub-com-rhoffmann-rich-lib-git git@github.com:git@github.com:rhoffmann/rich-lib.git
+49 silly lockFile 68d62b0d-ithub-com-rhoffmann-rich-lib-git git@github.com:git@github.com:rhoffmann/rich-lib.git
+50 silly lockFile 7a892fb3-ithub-com-rhoffmann-rich-lib-git rich-lib@git@github.com:rhoffmann/rich-lib.git
+51 silly lockFile 7a892fb3-ithub-com-rhoffmann-rich-lib-git rich-lib@git@github.com:rhoffmann/rich-lib.git
+52 error 404 404 Not Found: rich-lib
+52 error 404
+52 error 404 'rich-lib' is not in the npm registry.
+52 error 404 You should bug the author to publish it
+52 error 404 It was specified as a dependency of 'tut-functional-js'
+52 error 404
+52 error 404 Note that you can also install from a
+52 error 404 tarball, folder, or http url, or git url.
+53 error System Darwin 14.1.0
+54 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+55 error cwd /Users/richard/Code/tut-functional-js
+56 error node -v v0.10.36
+57 error npm -v 1.4.28
+58 error code E404
+59 verbose exit [ 1, true ]
