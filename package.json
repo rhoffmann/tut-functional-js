@@ -7,11 +7,23 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "babelify": "^6.0.2",
     "browserify": "^9.0.4",
-    "rich-lib": "rhoffmann/rich-lib#0.0.1",
     "gulp": "^3.8.11",
     "gulp-jshint": "^1.10.0",
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-streamify": "0.0.5",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.4",
     "jshint-stylish": "^1.0.1",
+    "lodash": "^3.6.0",
+    "ramda": "^0.13.0",
+    "rich-lib": "rhoffmann/rich-lib#master",
+    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.5.3",
+    "lodash": "^3.6.0"
   }
 }

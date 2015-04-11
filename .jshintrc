@@ -12,6 +12,7 @@
   "node"      : true,
   "quotmark"  : "single",
   "undef"     : true,
+  "esnext"    : true,
   "unused"    : true,
   "white"     : false
 }

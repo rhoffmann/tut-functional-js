@@ -1,3 +1,4 @@
+
 var allBeers = require('./data/beers.json').beers;
 
 // var beerTemplate = document.getElementById('tmpl-beer').textContent;
@@ -7,7 +8,13 @@ var averageAbv = document.getElementById('averageAbv');
 var filters = document.getElementById('filters');
 var filterLinks = filters.querySelectorAll('a');
 
+var R = require('ramda');
+var _ = require('lodash');
 var rl = require('rich-lib');
+
+import { Dog, Wolf } from './modules/zoo-es6';
+var myDog = new Dog('James', 'labrador');
+console.log(myDog.bark());
 
 function renderBeers(beers) {
   var beerGroups = rl.groupBy(beers, function(beer) {
@@ -26,15 +33,14 @@ function setActiveFilter(active) {
   active.classList.add('btn-active');
 }
 
+function roundDecimal(number, places) {
+  var factor = Math.pow(10, places);
+  return Math.round(number * factor) / factor;
+}
 
 function getAverageAbv(beers) {
-  var abvs = rl.map(beers, function(beer) {
-    return beer.abv;
-  });
-
-  var total = rl.reduce(abvs, rl.add, 0);
-
-  return Math.round(total / beers.length * 10) / 10;
+  var mean = rl.mean(beers, 'abv');
+  return roundDecimal(mean, 2);
 }
 
 var filterByLocale = rl.makeFilter(allBeers, 'locale');
@@ -63,7 +69,7 @@ filters.addEventListener('click', function (e) {
       filteredBeers = filterByLocale('import');
       break;
     case 'ale':
-      filteredBeers = rl.filter(allBeers, function(beer) {
+      filteredBeers = allBeers.filter(function(beer) {
         return beer.type === 'ale' || beer.type === 'ipa';
       });
       break;
@@ -72,6 +78,9 @@ filters.addEventListener('click', function (e) {
       break;
     case 'stout':
       filteredBeers = filterByType('stout');
+      break;
+    case 'surprise':
+      filteredBeers = [_.sample(allBeers)];
       break;
   }
     
