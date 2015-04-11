@@ -1,3 +1,4 @@
+/* global _:true */
 
 var allBeers = require('./data/beers.json').beers;
 
@@ -8,13 +9,13 @@ var averageAbv = document.getElementById('averageAbv');
 var filters = document.getElementById('filters');
 var filterLinks = filters.querySelectorAll('a');
 
-var R = require('ramda');
+// var R = require('ramda');
 var _ = require('lodash');
 var rl = require('rich-lib');
 
-import { Dog, Wolf } from './modules/zoo-es6';
-var myDog = new Dog('James', 'labrador');
-console.log(myDog.bark());
+var immuTest = require('./modules/immutable-test');
+import * as immuTest from './modules/immutable-test';
+immuTest.start(342);
 
 function renderBeers(beers) {
   var beerGroups = rl.groupBy(beers, function(beer) {

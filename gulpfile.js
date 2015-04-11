@@ -1,39 +1,65 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var browserify = require('browserify');
+var watchify = require('watchify');
 var babelify = require('babelify');
 var sourcemaps = require('gulp-sourcemaps');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
+var gulpif = require('gulp-if');
 var streamify = require('gulp-streamify');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+
+var watch;
 
 var paths = {
 	js: './src/app.js',
 	watchJs : 'src/**/*.js'
 };
 
-gulp.task('scripts', function() {
+function browserifyShare() {
+	var b = browserify( paths.js, {
+		debug: true,
+		cache: {},
+		packageCache: {},
+		fullPaths: true
+	});
 
-	return browserify( paths.js, {
-			debug: true
-		})
-		.transform(babelify)
+	b.transform(babelify)
 		.require('./src/app.js', {entry: true})
-		.bundle()
+
+	if (watch) {
+		b = watchify(b);
+
+		b.on('update', function() {
+			bundleShare(b);	
+		});
+	}
+	
+	b.on('log', gutil.log);
+
+	return bundleShare(b);
+}
+
+function bundleShare(b) {
+	return b.bundle()
 		.on('error', gutil.log.bind(gutil, 'Browserify Error' ))
 		.pipe(source('bundle.js'))
 		.pipe(buffer())
 		.pipe(sourcemaps.init({loadMaps: true, sourceRoot: '/dist'}))
 		.pipe(uglify())
 		.pipe(sourcemaps.write('./'))
-		// .pipe(streamify(uglify()))
 		.pipe(gulp.dest('./dist'))
-		.pipe(reload({stream: true}));
+		.pipe(gulpif(watch, reload({stream:true})));
+}
 
+gulp.task('scripts', function() {
+
+	watch = false;
+	return browserifyShare();
 
 });
 
@@ -51,7 +77,10 @@ gulp.task('watch', function() {
 		}
 	});
 
-	gulp.watch( paths.watchJs, ['jshint', 'scripts']);
+	watch = true;
+	browserifyShare();
+	
+	gulp.watch( paths.watchJs, ['jshint']);
 });
 
 
